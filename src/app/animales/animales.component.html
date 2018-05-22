@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<p>
+  Animales
+</p>
+<nav>
+  <button type="button" class="btn btn-primary" routerLink="lista" [@animacion]="estado1" (mouseenter)="estado1='active'" (mouseleave)="estado1='inactive'">lista</button>
+  <button type="button" class="btn btn-primary" routerLink="detalle" [@animacion]="estado2" (mouseenter)="estado2='active'" (mouseleave)="estado2='inactive'">Agregar</button>
+</nav>
+
+<router-outlet></router-outlet>

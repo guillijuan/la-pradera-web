@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="card">
+        <div class="card-title">
+            {{ titulo }}
+        </div>
+        <div class="card-block">
+            <form novalidate [formGroup]="form">
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="display:none" id="id" formControlName="id" readonly="readonly">
+                    </div>
+                    <label for="nombre_animal">Nombre del Animal</label>
+                    <input type="text" class="form-control" id="nombre_animal" formControlName="nombre_animal">
+                    <div *ngIf="form.controls.nombre_animal.errors && form.controls.nombre_animal.touched">
+                        <div *ngIf="form.controls.nombre_animal.errors.required" class="alert alert-danger">
+                            El campo Nombre es requerido
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fecha_nac">Fecha de Nacimiento</label>
+                    <input type="text" class="form-control" id="fecha_nac" formControlName="fecha_nac">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
+                </div>
+                <div class="form-group">
+                    <label for="especie_ani">Especie</label>
+                    <input type="text" class="form-control" id="especie_ani" formControlName="especie_ani">
+                    <div *ngIf="form.controls.especie_ani.errors && form.controls.especie_ani.touched">
+                        <div *ngIf="form.controls.especie_ani.errors.required" class="alert alert-danger">
+                            El campo Especie es requerido
+                        </div>
+                        <div *ngIf="form.controls.especie_ani.errors.minlength" class="alert alert-danger">
+                            El campo Especie debe tener minimo 3 caracteres
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <input type="text" class="form-control" id="imagen" formControlName="imagen">
+                </div>
+                <button class="btn btn-primary" (click)="guardarAnimal()" [disabled]="!form.valid">
+                    Guardar</button>
+                <button class="btn btn-default" (click)="limpiarFormulario()">Limpiar</button>
+            </form>
+        </div>
+    </div>
+</div>

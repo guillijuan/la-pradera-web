@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Lista de Animales
+        </div>
+        <div class="card-block">
+            <table class="table table-hover">
+                <thead class="thead-default">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre Animal</th>
+                        <th>Especie</th>
+                        <th>Descrpcion</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of lista">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.nombre_animal }}</td>
+                        <td>{{ item.especie_ani }}</td>
+                        <td>{{ item.descripcion }}</td>
+                        <img src="http://localhost/appmarket-api/imagenes/{{item.imagen}}.jpg" width="100" height="100">
+                        <td>
+                            <button class="btn btn-sm btn-primary" (click)="Editar(item)">Editar</button>
+                            <button class="btn btn-sm btn-danger" (click)="Borrar(item)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
